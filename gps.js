@@ -11,4 +11,6 @@ function errorCallback() {}
  
 function successCallback(position) {
   console.log("fn: successCallback",position)
+  var blob = new Blob([position], { type: "text/plain;charset=utf-8" });
+  saveAs(blob, "dynamic.txt");
 }
