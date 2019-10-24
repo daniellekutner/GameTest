@@ -19,21 +19,11 @@ function successCallback(position) {
   console.log(text)
 }
 
-$('#download').on("click", function() {
-  function download() {
-    var jsonObject = {
-      "name": "John",
-      "age": 31,
-      "city": "New York"
-    };
-    var fileContents = JSON.stringify(jsonObject, null, 2);
-    var fileName = "data.csv";
-    var pp = document.createElement('a');
-    pp.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    pp.setAttribute('download', fileName);
-    pp.click();
-  }
-  setTimeout(function() {
-    download()
-  }, 500);
-});
+function download() {
+  var fileName = "data.csv";
+  var pp = document.createElement('a');
+  pp.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  pp.setAttribute('download', fileName);
+  pp.click();
+}
+
