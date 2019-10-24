@@ -22,12 +22,14 @@ function successCallback(position) {
 $('#download').on("click", function() {
   function download() {
     var jsonObject = {
-        text
+      "name": "John",
+      "age": 31,
+      "city": "New York"
     };
-    // var fileContents = JSON.stringify(jsonObject, null, 2);
-    var fileName = "data.json";
+    var fileContents = JSON.stringify(jsonObject, null, 2);
+    var fileName = "data.csv";
     var pp = document.createElement('a');
-    pp.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(fileContents));
+    pp.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     pp.setAttribute('download', fileName);
     pp.click();
   }
