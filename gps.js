@@ -17,9 +17,6 @@ function successCallback(position) {
   text += `${position.coords.latitude}, ${position.coords.longitude} \n`;
   document.getElementById("coords").innerHTML += `latitude: ${position.coords.latitude}, longitude: ${position.coords.longitude} <br>`;
   console.log(text)
-
-  var blob = new Blob([position], { type: "text/plain;charset=utf-8" });
-  saveAs(blob, "dynamic.txt");
 }
 
 $('#download').on("click", function() {
