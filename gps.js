@@ -11,6 +11,23 @@ function errorCallback() {}
  
 function successCallback(position) {
   console.log("fn: successCallback",position)
-  var blob = new Blob([position], { type: "text/plain;charset=utf-8" });
-  saveAs(blob, "dynamic.txt");
 }
+
+$('#download').on("click", function() {
+  function download() {
+    var jsonObject = {
+      "name": "John",
+      "age": 31,
+      "city": "New York"
+    };
+    var fileContents = JSON.stringify(jsonObject, null, 2);
+    var fileName = "data.json";
+    var pp = document.createElement('a');
+    pp.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(fileContents));
+    pp.setAttribute('download', fileName);
+    pp.click();
+  }
+  setTimeout(function() {
+    download()
+  }, 500);
+});
