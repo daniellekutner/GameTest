@@ -9,8 +9,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- GPS capture -->
+    <div id="GPS-capture">
+        <button type="button" id="gps-button" onclick="initGeolocation()">Click Me!</button>
+    </div>
     <!-- Camera -->
-    <main id="camera">
+    <div id="camera">
         <!-- Camera sensor -->
         <canvas id="camera--sensor"></canvas>
         <!-- Camera view -->
@@ -19,8 +23,9 @@
         <img src="//:0" alt="" id="camera--output">
         <!-- Camera trigger -->
         <button id="camera--trigger">Take a picture</button>
-    </main>
+    </div>
     <!-- Reference to your JavaScript file -->
     <script src="app.js"></script>
+    <script src="gps.js"></script>
 </body>
 </html>
