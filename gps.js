@@ -17,7 +17,7 @@ const ri = {
   };
 
 var width = 300
-    ,height = 500;
+    ,height = 1500;
 
 var svg = d3.select("#map")
   .attr("width", width)
