@@ -31,9 +31,10 @@ def check_accuracy(point, base_map_loc):
 def find_min_distance(experiments_loc, base_map_loc):
     min_dist_list = []
     for loc in experiments_loc:
+        print(check_accuracy(loc, base_map_loc))
         min_dist_list.append(check_accuracy(loc, base_map_loc))
     return min_dist_list
 
 
 experiments_locations, base_map_locations = upload_data()
-print(find_min_distance(experiments_locations, base_map_locations))
+find_min_distance(experiments_locations, base_map_locations)
