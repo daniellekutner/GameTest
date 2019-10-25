@@ -22,10 +22,16 @@ var width = 300
 var svg = d3.select("#map")
   .attr("width", width)
   .attr("height", height);
+svg.append("rect")
+  .attr("width", width)
+  .attr("height", 600)
+  .attr("fill", "lightblue");  
 var gn = svg.append("g")
-  .attr("class","island");
+  .attr("class","island")
+  .attr("transform","translate(0,-1000)");
 var gr = svg.append("g")
-  .attr("class","circles");
+  .attr("class","circles")
+  .attr("transform","translate(0,-1000)");
 
 let lambda = 125
   ,phi = 0;
@@ -94,8 +100,10 @@ function successCallback(position) {
     .attr("class","location")
     .attr("cx", coordinates[0])
     .attr("cy", coordinates[1])
-    .attr("r", 3)
-    .style("fill", "blue");
+    .attr("r", 5)
+    .style("fill", "lightgreen")
+    .attr("stroke-width","1")
+    .attr("stroke", "black");
 }
 
 function download() {
